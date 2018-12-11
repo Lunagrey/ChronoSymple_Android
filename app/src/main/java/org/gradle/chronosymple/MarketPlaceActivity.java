@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class MarketPlaceActivity extends AppCompatActivity {
 
@@ -17,6 +18,7 @@ public class MarketPlaceActivity extends AppCompatActivity {
         Button dia = (Button) findViewById(R.id.Diabutton);
         dia.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                Toast.makeText(MarketPlaceActivity.this, "VOus avez ajouter le module du diabète",Toast.LENGTH_SHORT).show();
                 getToHomePage();
             }
         });

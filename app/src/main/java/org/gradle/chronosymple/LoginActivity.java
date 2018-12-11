@@ -8,6 +8,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
+import java.util.Objects;
+
 public class LoginActivity extends AppCompatActivity {
 
     Button connect = null;
@@ -16,6 +18,7 @@ public class LoginActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login);
+        Objects.requireNonNull(getSupportActionBar()).hide();
 
         connect = findViewById(R.id.connect);
         connect.setOnClickListener(clickListenerConnect);
