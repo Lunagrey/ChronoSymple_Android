@@ -18,7 +18,7 @@
         android:title="Stat"/>
 
     <item
-        android:id="@+id/navigation_"
+        android:id="@+id/navigation_export"
         android:icon="@drawable/ic_arrow_upward_black_24dp"
         android:title="Export"/>
 

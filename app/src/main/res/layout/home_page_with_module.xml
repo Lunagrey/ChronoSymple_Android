@@ -13,19 +13,22 @@
 
         <TextView
             android:id="@+id/module"
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:text="Module du diabète"
-            android:textSize="30dp"
-            android:gravity="center_horizontal"/>
+            android:text="Bienvenue Dans votre nouveau module.\nProcéder à votre première notation en cliquant sur le bouton suivant : "
+            android:textSize="24dp"
+            android:layout_marginTop="100dp"
+            android:gravity="center_horizontal"
+            android:layout_centerHorizontal="true"
+            />
 
         <Button
             android:id="@+id/note"
             android:layout_width="227dp"
             android:layout_height="39dp"
+            android:layout_marginTop="20dp"
             android:layout_below="@+id/module"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="217dp"
             android:background="@color/colorPrimary"
             android:text="Noter vos symptômes" />
     </RelativeLayout>
@@ -44,7 +47,7 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="1.0"
             app:layout_constraintStart_toStartOf="parent"
-            tools:layout_editor_absoluteY="558dp"/>
+            tools:layout_editor_absoluteY="558dp" />
 
         <android.support.design.widget.BottomNavigationView
             android:id="@+id/navigation"

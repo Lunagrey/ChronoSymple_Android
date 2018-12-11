@@ -144,7 +144,7 @@
     </TableLayout>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/validate"
         android:layout_width="171dp"
         android:layout_height="38dp"
         android:layout_marginBottom="112dp"

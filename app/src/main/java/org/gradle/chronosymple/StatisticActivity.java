@@ -7,6 +7,6 @@ public class StatisticActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.note);
+        setContentView(R.layout.statistic);
     }
 }
