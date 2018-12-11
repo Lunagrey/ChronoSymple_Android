@@ -5,21 +5,21 @@
     <item
         android:id="@+id/navigation_add_note"
         android:icon="@drawable/ic_note_add_black_24dp"
-        android:title="Songs"/>
+        android:title="Note"/>
 
     <item
         android:id="@+id/navigation_calendar"
         android:icon="@drawable/ic_note_black_24dp"
-        android:title="Albums"/>
+        android:title="Calendar"/>
 
     <item
         android:id="@+id/navigation_stat"
         android:icon="@drawable/ic_call_missed_outgoing_black_24dp"
-        android:title="Artists"/>
+        android:title="Stat"/>
 
     <item
         android:id="@+id/navigation_"
         android:icon="@drawable/ic_arrow_upward_black_24dp"
-        android:title="Artists"/>
+        android:title="Export"/>
 
 </menu>
