@@ -19,6 +19,10 @@
         <activity android:name=".HomePage" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".MarketPlaceActivity" />
+        <activity android:name=".ExportActivity" />
+        <activity android:name=".CalendarActivity" />
+        <activity android:name=".NoteActivity" />
+        <activity android:name=".StatisticActivity" />
     </application>
 
 </manifest>
