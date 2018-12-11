@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:id="@+id/diabete"
-        android:icon="@drawable/diamodule"
-        android:title="Diabète"/>
+        android:background="@drawable/diamodule"
+        android:title="D"/>
 
 </menu>

@@ -31,6 +31,17 @@ public class HomePage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         hide = (String) getIntent().getSerializableExtra("hide");
 
+        if (hide.equals("true")) {
+            setContentView(R.layout.home_page);
+            marketplace = findViewById(R.id.marketplace);
+            marketplace.setOnClickListener(clickListenerConnect);
+        }
+        else {
+            setContentView(R.layout.home_page_with_module);
+            marketplace = findViewById(R.id.note);
+            marketplace.setOnClickListener(clickListenerNote);
+        }
+
         actionbar = getSupportActionBar();
         actionbar.setDisplayHomeAsUpEnabled(true);
         actionbar.setHomeAsUpIndicator(R.drawable.ic_menu_black_24dp);
@@ -50,18 +61,6 @@ public class HomePage extends AppCompatActivity {
                 return true;
             }
         });
-
-        if (hide.equals("true")) {
-            setContentView(R.layout.home_page);
-            marketplace = findViewById(R.id.marketplace);
-            marketplace.setOnClickListener(clickListenerConnect);
-        }
-        else {
-            setContentView(R.layout.home_page_with_module);
-            marketplace = findViewById(R.id.note);
-            marketplace.setOnClickListener(clickListenerNote);
-        }
-
     }
 
     private View.OnClickListener clickListenerConnect = new View.OnClickListener() {
@@ -84,18 +83,17 @@ public class HomePage extends AppCompatActivity {
     };
 
     public void goToNoteActivityPage() {
-        Intent i = new Intent(this, NoteActivity.class);
+        Intent i = new Intent(this, StatisticActivity.class);
         startActivity(i);
     }
 
     public boolean onOptionsItemSelected(MenuItem item) {
-        switch (item.getItemId()) {
-            case R.id.diabete:
-                if (!mDrawerLayout.isDrawerOpen(GravityCompat.START))
-                    mDrawerLayout.openDrawer(GravityCompat.START);
-                else
-                    mDrawerLayout.closeDrawers();
-                return true;
+        int id = item.getItemId();
+        if (id == android.R.id.home) {
+            if (!mDrawerLayout.isDrawerOpen(GravityCompat.START))
+                mDrawerLayout.openDrawer(GravityCompat.START);
+            else
+                mDrawerLayout.closeDrawers();
         }
         return super.onOptionsItemSelected(item);
     }
