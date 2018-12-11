@@ -19,14 +19,15 @@ public class HomePage extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         hide = (String) getIntent().getSerializableExtra("hide");
-        if (hide == "true") {
+        if (hide.equals("true")) {
             setContentView(R.layout.home_page);
             marketplace = findViewById(R.id.marketplace);
             marketplace.setOnClickListener(clickListenerConnect);
         }
         else {
             setContentView(R.layout.home_page_with_module);
-
+            marketplace = findViewById(R.id.note);
+            marketplace.setOnClickListener(clickListenerNote);
         }
     }
 
@@ -39,6 +40,18 @@ public class HomePage extends AppCompatActivity {
 
     public void goToMarketPlacePage() {
         Intent i = new Intent(this, MarketPlaceActivity.class);
+        startActivity(i);
+    }
+
+    private View.OnClickListener clickListenerNote = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            goToNoteActivityPage();
+        }
+    };
+
+    public void goToNoteActivityPage() {
+        Intent i = new Intent(this, NoteActivity.class);
         startActivity(i);
     }
 }

@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         loadingPage = findViewById(R.id.loading);
+        loadingPage.setOnClickListener(clickListnerPage);
     }
 
     private View.OnClickListener clickListnerPage = new View.OnClickListener() {
@@ -26,7 +27,6 @@ public class MainActivity extends AppCompatActivity {
 
     public void goToLoginPage() {
         Intent i = new Intent(this, LoginActivity.class);
-        i.putExtra("hide", "true");
         startActivity(i);
     }
 }

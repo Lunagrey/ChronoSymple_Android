@@ -37,7 +37,7 @@
 
             android:layout_marginTop="140dp"
             android:gravity="center_horizontal"
-            android:text="YOUR EMAIL"
+            android:text="VOTRE EMAIL"
             android:textColor="#FFF"
             android:textSize="20dp" />
 
@@ -61,7 +61,7 @@
             android:layout_below="@+id/EdityouEmail"
             android:layout_marginTop="31dp"
             android:gravity="center_horizontal"
-            android:text="YOUR PASSWORD"
+            android:text="VOTRE MOT DE PASSE"
             android:textColor="#FFF"
             android:textSize="20dp" />
 
@@ -85,7 +85,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="52dp"
             android:background="#FFF"
-            android:text="CONNECT"
+            android:text="SE CONNECTER"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             tools:layout_editor_absoluteY="393dp" />

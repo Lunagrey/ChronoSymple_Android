@@ -41,6 +41,7 @@ public class LoginActivity extends AppCompatActivity {
 
     public void getToHomePage() {
         Intent i = new Intent(this, HomePage.class);
+        i.putExtra("hide", "true");
         startActivity(i);
     }
 }

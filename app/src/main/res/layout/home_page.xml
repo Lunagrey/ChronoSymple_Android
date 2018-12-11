@@ -20,8 +20,9 @@
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="211dp"
-            android:text="No module activate.\nGo to market place !"
-            android:textSize="30dp" />
+            android:text="Aucun module actif.\n"
+            android:textSize="30dp"
+            android:gravity="center_horizontal"/>
 
         <Button
             android:id="@+id/marketplace"
@@ -29,8 +30,8 @@
             android:layout_height="39dp"
             android:layout_below="@+id/title"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="48dp"
+            android:layout_marginTop="29dp"
             android:background="#62BE87"
-            android:text="Go to Market Place" />
+            android:text="Allez sur le Market Place" />
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>
