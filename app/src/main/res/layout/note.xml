@@ -1,6 +1,158 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TableLayout
+        android:id="@+id/tableLayout2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="17dp"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/glicémie"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Glicémie"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:layout_width="290dp"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/glicémie" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/glucides"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Glucides"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:layout_width="290dp"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/glucides" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/insulineRepas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Insuline\n(repas)"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:layout_width="290dp"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/insulineRepas" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/insulineCorr"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Insuline\n(correction)"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:layout_width="290dp"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/insulineCorr" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/pressArt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pression artérielle"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:layout_width="290dp"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/pressArt" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/cétone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Cétone"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:layout_width="290dp"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/cétone" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/poids"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Poids"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:layout_width="290dp"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/poids" />
+        </TableRow>
+
+        <TableRow>
+
+            <TextView
+                android:id="@+id/hba1c"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="HBA1C"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <EditText
+                android:layout_width="290dp"
+                android:layout_height="wrap_content"
+                android:layout_above="@+id/hba1c" />
+        </TableRow>
+    </TableLayout>
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="171dp"
+        android:layout_height="38dp"
+        android:layout_marginBottom="112dp"
+        android:background="#58b57d"
+        android:text="Valider"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tableLayout2" />
 </android.support.constraint.ConstraintLayout>
