@@ -13,10 +13,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <TableRow>
+        <TableRow
+            android:id="@+id/glicémie">
 
             <TextView
-                android:id="@+id/glicémie"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Glicémie"
@@ -25,14 +25,14 @@
 
             <EditText
                 android:layout_width="290dp"
-                android:layout_height="wrap_content"
-                android:layout_above="@+id/glicémie" />
+                android:layout_height="wrap_content" />
         </TableRow>
 
-        <TableRow>
+        <TableRow
+            android:id="@+id/glucides"
+            android:layout_below="@+id/glicémie">
 
             <TextView
-                android:id="@+id/glucides"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Glucides"
@@ -41,30 +41,30 @@
 
             <EditText
                 android:layout_width="290dp"
-                android:layout_height="wrap_content"
-                android:layout_above="@+id/glucides" />
+                android:layout_height="wrap_content"/>
         </TableRow>
 
-        <TableRow>
+        <TableRow
+            android:id="@+id/insulineavantRepas"
+            android:layout_below="@+id/glucides">
 
             <TextView
-                android:id="@+id/insulineRepas"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Insuline\n(repas)"
+                android:text="Insuline avant repas"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
             <EditText
                 android:layout_width="290dp"
-                android:layout_height="wrap_content"
-                android:layout_above="@+id/insulineRepas" />
+                android:layout_height="wrap_content" />
         </TableRow>
 
-        <TableRow>
+        <TableRow
+            android:id="@+id/insulineaJeun"
+            android:layout_below="@+id/insulineavantRepas">
 
             <TextView
-                android:id="@+id/insulineCorr"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Insuline\n(correction)"
@@ -73,72 +73,23 @@
 
             <EditText
                 android:layout_width="290dp"
-                android:layout_height="wrap_content"
-                android:layout_above="@+id/insulineCorr" />
+                android:layout_height="wrap_content" />
         </TableRow>
 
-        <TableRow>
+        <TableRow
+            android:id="@+id/insulineapresRepas"
+            android:layout_below="@+id/insulineaJeun">
 
             <TextView
-                android:id="@+id/pressArt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Pression artérielle"
+                android:text="Insuline\n(correction)"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
             <EditText
                 android:layout_width="290dp"
-                android:layout_height="wrap_content"
-                android:layout_above="@+id/pressArt" />
-        </TableRow>
-
-        <TableRow>
-
-            <TextView
-                android:id="@+id/cétone"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Cétone"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-            <EditText
-                android:layout_width="290dp"
-                android:layout_height="wrap_content"
-                android:layout_above="@+id/cétone" />
-        </TableRow>
-
-        <TableRow>
-
-            <TextView
-                android:id="@+id/poids"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Poids"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-            <EditText
-                android:layout_width="290dp"
-                android:layout_height="wrap_content"
-                android:layout_above="@+id/poids" />
-        </TableRow>
-
-        <TableRow>
-
-            <TextView
-                android:id="@+id/hba1c"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="HBA1C"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-            <EditText
-                android:layout_width="290dp"
-                android:layout_height="wrap_content"
-                android:layout_above="@+id/hba1c" />
+                android:layout_height="wrap_content" />
         </TableRow>
     </TableLayout>
 
@@ -148,7 +99,7 @@
         android:layout_height="38dp"
         android:layout_marginBottom="112dp"
         android:background="#58b57d"
-        android:text="Valider"
+        android:text="Valider la notation"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
