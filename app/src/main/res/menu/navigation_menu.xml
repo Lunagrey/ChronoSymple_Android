@@ -3,6 +3,7 @@
 
     <item android:id="@+id/diabete"
         android:background="@drawable/diamodule"
-        android:title="D"/>
+        android:title="D">
+    </item>
 
 </menu>

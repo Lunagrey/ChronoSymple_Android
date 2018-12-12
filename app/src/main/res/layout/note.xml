@@ -14,7 +14,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <TableRow
-            android:id="@+id/glicémie">
+            android:id="@+id/glycémie">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -24,13 +24,14 @@
                 android:textStyle="bold" />
 
             <EditText
+                android:id="@+id/editglycémie"
                 android:layout_width="290dp"
                 android:layout_height="wrap_content" />
         </TableRow>
 
         <TableRow
             android:id="@+id/glucides"
-            android:layout_below="@+id/glicémie">
+            android:layout_below="@+id/glycémie">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -40,6 +41,7 @@
                 android:textStyle="bold" />
 
             <EditText
+                android:id="@+id/editglucide"
                 android:layout_width="290dp"
                 android:layout_height="wrap_content"/>
         </TableRow>
@@ -56,6 +58,7 @@
                 android:textStyle="bold" />
 
             <EditText
+                android:id="@+id/editinsulineavantrepas"
                 android:layout_width="290dp"
                 android:layout_height="wrap_content" />
         </TableRow>
@@ -67,11 +70,12 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Insuline\n(correction)"
+                android:text="Insu après repas"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
             <EditText
+                android:id="@+id/editinsulineapresrepas"
                 android:layout_width="290dp"
                 android:layout_height="wrap_content" />
         </TableRow>
@@ -83,11 +87,12 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Insuline\n(correction)"
+                android:text="Insu a jeun"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
             <EditText
+                android:id="@+id/editinsulineAjeun"
                 android:layout_width="290dp"
                 android:layout_height="wrap_content" />
         </TableRow>

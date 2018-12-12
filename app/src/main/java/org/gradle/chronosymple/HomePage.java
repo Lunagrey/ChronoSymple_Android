@@ -25,6 +25,12 @@ public class HomePage extends AppCompatActivity {
     Button  marketplace = null;
     Button  note = null;
     String  hide;
+    String  state;
+    String  glycémie;
+    String  glucide;
+    String  insulineapresrepas;
+    String  insulineavantrepas;
+    String  insulineajeun;
     private DrawerLayout mDrawerLayout;
     ActionBar actionbar = null;
     private ActionBarDrawerToggle t;
@@ -33,6 +39,11 @@ public class HomePage extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         hide = (String) getIntent().getSerializableExtra("hide");
+        glycémie = (String) getIntent().getSerializableExtra("glycémie");
+        glucide = (String) getIntent().getSerializableExtra("glucide");
+        insulineapresrepas = (String) getIntent().getSerializableExtra("insulineapresrepas");
+        insulineavantrepas = (String) getIntent().getSerializableExtra("insulineavantrepas");
+        insulineajeun = (String) getIntent().getSerializableExtra("insulineajeun");
 
         if (hide.equals("true")) {
             setContentView(R.layout.home_page);
@@ -86,6 +97,32 @@ public class HomePage extends AppCompatActivity {
         }
         else if (hide.equals("stat")) {
             setContentView(R.layout.home_page_with_notation);
+            BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
+            navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+            note = findViewById(R.id.calendar);
+            note.setOnClickListener(clickListenerCalendar);
+            actionbar = getSupportActionBar();
+            actionbar.setDisplayHomeAsUpEnabled(true);
+            actionbar.setHomeAsUpIndicator(R.drawable.ic_menu_black_24dp);
+            mDrawerLayout = (DrawerLayout)findViewById(R.id.activity_main);
+            t = new ActionBarDrawerToggle(this, mDrawerLayout,R.string.Open, R.string.Close);
+            mDrawerLayout.addDrawerListener(t);
+            t.syncState();
+            NavigationView navigationView = findViewById(R.id.nav_view);
+            navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+                @Override
+                public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                    int id = item.getItemId();
+                    if (id != R.id.diabete) {
+                        mDrawerLayout.closeDrawers();
+                        goToHomePageModuleActivated();
+                    }
+                    return true;
+                }
+            });
+        }
+        else {
+            setContentView(R.layout.home_final);
             BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
             navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
             note = findViewById(R.id.calendar);
@@ -169,36 +206,77 @@ public class HomePage extends AppCompatActivity {
 
     public void goToMarketPlacePage() {
         Intent i = new Intent(this, MarketPlaceActivity.class);
+        i.putExtra("hide", hide);
+        i.putExtra("glycémie", glycémie);
+        i.putExtra("glucide", glucide);
+        i.putExtra("inculineavantrepas", insulineavantrepas);
+        i.putExtra("inculineapresrepas", insulineapresrepas);
+        i.putExtra("inculineajeun", insulineajeun);
         startActivity(i);
     }
 
     public void goToNoteActivityPage() {
         Intent i = new Intent(this, NoteActivity.class);
+        i.putExtra("hide", hide);
+        i.putExtra("glycémie", glycémie);
+        i.putExtra("glucide", glucide);
+        i.putExtra("inculineavantrepas", insulineavantrepas);
+        i.putExtra("inculineapresrepas", insulineapresrepas);
+        i.putExtra("inculineajeun", insulineajeun);
         startActivity(i);
     }
 
     public void goToHomePage() {
         Intent i = new Intent(this, HomePage.class);
-        i.putExtra("hide", "false");
+        i.putExtra("hide", hide);
+        i.putExtra("glycémie", glycémie);
+        i.putExtra("glucide", glucide);
+        i.putExtra("inculineavantrepas", insulineavantrepas);
+        i.putExtra("inculineapresrepas", insulineapresrepas);
+        i.putExtra("inculineajeun", insulineajeun);
         startActivity(i);
     }
 
     public void goToStatisticActivityPage() {
         Intent i = new Intent(this, StatisticActivity.class);
+        i.putExtra("hide", hide);
+        i.putExtra("glycémie", glycémie);
+        i.putExtra("glucide", glucide);
+        i.putExtra("inculineavantrepas", insulineavantrepas);
+        i.putExtra("inculineapresrepas", insulineapresrepas);
+        i.putExtra("inculineajeun", insulineajeun);
         startActivity(i);
     }
 
     public void goToExportActivityPage() {
         Intent i = new Intent(this, ExportActivity.class);
+        i.putExtra("hide", hide);
+        i.putExtra("glycémie", glycémie);
+        i.putExtra("glucide", glucide);
+        i.putExtra("inculineavantrepas", insulineavantrepas);
+        i.putExtra("inculineapresrepas", insulineapresrepas);
+        i.putExtra("inculineajeun", insulineajeun);
         startActivity(i);
     }
 
     public void goToCalendarActivityPage() {
         Intent i = new Intent(this, CalendarActivity.class);
+        i.putExtra("hide", hide);
+        i.putExtra("glycémie", glycémie);
+        i.putExtra("glucide", glucide);
+        i.putExtra("inculineavantrepas", insulineavantrepas);
+        i.putExtra("inculineapresrepas", insulineapresrepas);
+        i.putExtra("inculineajeun", insulineajeun);
         startActivity(i);
     }
     public void goToHomePageModuleActivated() {
         Intent i = new Intent(this, HomePage.class);
+        i.putExtra("hide", hide);
+        i.putExtra("glycémie", glycémie);
+        i.putExtra("glucide", glucide);
+        i.putExtra("inculineavantrepas", insulineavantrepas);
+        i.putExtra("inculineapresrepas", insulineapresrepas);
+        i.putExtra("inculineajeun", insulineajeun);
         i.putExtra("hide", "true");
         startActivity(i);
     }
