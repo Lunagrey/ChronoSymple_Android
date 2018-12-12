@@ -25,15 +25,44 @@
             android:gravity="center_horizontal"/>
 
         <Button
-            android:id="@+id/marketplace"
-            android:layout_width="227dp"
-            android:layout_height="39dp"
+            android:id="@+id/calendar"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
             android:layout_below="@+id/title"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="29dp"
             android:background="#62BE87"
-            android:text="" />
+            android:text="allez sur votre calendrier de note" />
     </RelativeLayout>
+
+    <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <FrameLayout
+            android:id="@+id/frame_container"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:layout_editor_absoluteY="558dp" />
+
+        <android.support.design.widget.BottomNavigationView
+            android:id="@+id/navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="?android:attr/windowBackground"
+            app:itemBackground="@color/colorPrimary"
+            android:foreground="?attr/selectableItemBackground"
+            app:itemIconTint="@android:color/white"
+            app:itemTextColor="@android:color/white"
+            app:menu="@menu/navigation" />
+    </android.support.design.widget.CoordinatorLayout>
 
     <android.support.design.widget.NavigationView
         android:layout_width="wrap_content"

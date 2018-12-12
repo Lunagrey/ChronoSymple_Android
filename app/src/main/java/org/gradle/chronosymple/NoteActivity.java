@@ -26,7 +26,7 @@ public class NoteActivity extends AppCompatActivity {
 
     public void goToHomePage() {
         Intent i = new Intent(this, HomePage.class);
-        i.putExtra("hide", "false");
+        i.putExtra("hide", "stat");
         startActivity(i);
     }
 

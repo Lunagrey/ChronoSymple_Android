@@ -58,7 +58,7 @@ public class HomePage extends AppCompatActivity {
                 }
             });
         }
-        else if (hide == "false") {
+        else if (hide.equals("false")) {
             setContentView(R.layout.home_page_with_module);
             BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
             navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
@@ -84,12 +84,12 @@ public class HomePage extends AppCompatActivity {
                 }
             });
         }
-        else if (hide == "stat") {
+        else if (hide.equals("stat")) {
             setContentView(R.layout.home_page_with_notation);
             BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
             navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-            note = findViewById(R.id.note);
-            note.setOnClickListener(clickListenerNote);
+            note = findViewById(R.id.calendar);
+            note.setOnClickListener(clickListenerCalendar);
             actionbar = getSupportActionBar();
             actionbar.setDisplayHomeAsUpEnabled(true);
             actionbar.setHomeAsUpIndicator(R.drawable.ic_menu_black_24dp);
@@ -123,6 +123,13 @@ public class HomePage extends AppCompatActivity {
         @Override
         public void onClick(View v) {
             goToNoteActivityPage();
+        }
+    };
+
+    private View.OnClickListener clickListenerCalendar = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            goToCalendarActivityPage();
         }
     };
 
