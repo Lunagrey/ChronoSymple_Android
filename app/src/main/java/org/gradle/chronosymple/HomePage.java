@@ -15,6 +15,8 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.w3c.dom.Text;
@@ -30,6 +32,10 @@ public class HomePage extends AppCompatActivity {
     String  insulineapresrepas;
     String  insulineavantrepas;
     String  insulineajeun;
+    LinearLayout add_note;
+    LinearLayout calendar;
+    LinearLayout stat;
+    LinearLayout export;
     private DrawerLayout mDrawerLayout;
     ActionBar actionbar = null;
     private ActionBarDrawerToggle t;
@@ -133,8 +139,14 @@ public class HomePage extends AppCompatActivity {
             setContentView(R.layout.home_final);
             BottomNavigationView navigation = (BottomNavigationView) findViewById(R.id.navigation);
             navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
-            note = findViewById(R.id.calendar);
-            note.setOnClickListener(clickListenerCalendar);
+            add_note = findViewById(R.id.add_note);
+            calendar = findViewById(R.id.calendar);
+            stat = findViewById(R.id.stat);
+            export = findViewById(R.id.export);
+            add_note.setOnClickListener(clickListenerNote);
+            calendar.setOnClickListener(clickListenerCalendar);
+            stat.setOnClickListener(clickListenerStat);
+            export.setOnClickListener(clickListenerExport);
             actionbar = getSupportActionBar();
             actionbar.setDisplayHomeAsUpEnabled(true);
             actionbar.setHomeAsUpIndicator(R.drawable.ic_menu_black_24dp);
@@ -175,6 +187,20 @@ public class HomePage extends AppCompatActivity {
         }
     };
 
+    private View.OnClickListener clickListenerExport = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            goToExportActivityPage();
+        }
+    };
+
+    private View.OnClickListener clickListenerStat = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            goToStatisticActivityPage();
+        }
+    };
+
     private View.OnClickListener clickListenerCalendar = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
@@ -203,16 +229,16 @@ public class HomePage extends AppCompatActivity {
                 case R.id.navigation_home:
                     return true;
                 case R.id.navigation_add_note:
-                    goToNoteActivityPage();
+                    goToNoteActivityPageWhithoutANimation();
                     return false;
                 case R.id.navigation_calendar:
-                   goToCalendarActivityPage();
+                    goToCalendarActivityPageWhithoutAnimation();
                     return true;
                 case R.id.navigation_stat:
-                    goToStatisticActivityPage();
+                    goToStatisticActivityPageAHithoutAnimation();
                     return true;
                 case R.id.navigation_export:
-                    goToExportActivityPage();
+                    goToExportActivityPageWhithoutAnimation();
                     return true;
             }
             return false;
@@ -241,8 +267,9 @@ public class HomePage extends AppCompatActivity {
         startActivity(i);
     }
 
-    public void goToHomePage() {
-        Intent i = new Intent(this, HomePage.class);
+    public void goToNoteActivityPageWhithoutANimation() {
+        Intent i = new Intent(this, NoteActivity.class);
+        i.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
         i.putExtra("hide", hide);
         i.putExtra("glycémie", glycémie);
         i.putExtra("glucide", glucide);
@@ -263,8 +290,45 @@ public class HomePage extends AppCompatActivity {
         startActivity(i);
     }
 
+    public void goToStatisticActivityPageAHithoutAnimation() {
+        Intent i = new Intent(this, StatisticActivity.class);
+        i.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+        i.putExtra("hide", hide);
+        i.putExtra("glycémie", glycémie);
+        i.putExtra("glucide", glucide);
+        i.putExtra("insulineavantrepas", insulineavantrepas);
+        i.putExtra("insulineapresrepas", insulineapresrepas);
+        i.putExtra("insulineajeun", insulineajeun);
+        startActivity(i);
+    }
+
+
     public void goToExportActivityPage() {
         Intent i = new Intent(this, ExportActivity.class);
+        i.putExtra("hide", hide);
+        i.putExtra("glycémie", glycémie);
+        i.putExtra("glucide", glucide);
+        i.putExtra("insulineavantrepas", insulineavantrepas);
+        i.putExtra("insulineapresrepas", insulineapresrepas);
+        i.putExtra("insulineajeun", insulineajeun);
+        startActivity(i);
+    }
+
+    public void goToExportActivityPageWhithoutAnimation() {
+        Intent i = new Intent(this, ExportActivity.class);
+        i.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
+        i.putExtra("hide", hide);
+        i.putExtra("glycémie", glycémie);
+        i.putExtra("glucide", glucide);
+        i.putExtra("insulineavantrepas", insulineavantrepas);
+        i.putExtra("insulineapresrepas", insulineapresrepas);
+        i.putExtra("insulineajeun", insulineajeun);
+        startActivity(i);
+    }
+
+    public void goToCalendarActivityPageWhithoutAnimation() {
+        Intent i = new Intent(this, CalendarActivity.class);
+        i.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
         i.putExtra("hide", hide);
         i.putExtra("glycémie", glycémie);
         i.putExtra("glucide", glucide);
@@ -284,16 +348,4 @@ public class HomePage extends AppCompatActivity {
         i.putExtra("insulineajeun", insulineajeun);
         startActivity(i);
     }
-    public void goToHomePageModuleActivated() {
-        Intent i = new Intent(this, HomePage.class);
-        i.putExtra("hide", hide);
-        i.putExtra("glycémie", glycémie);
-        i.putExtra("glucide", glucide);
-        i.putExtra("insulineavantrepas", insulineavantrepas);
-        i.putExtra("insulineapresrepas", insulineapresrepas);
-        i.putExtra("insulineajeun", insulineajeun);
-        i.putExtra("hide", "true");
-        startActivity(i);
-    }
-
 }
