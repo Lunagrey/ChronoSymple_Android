@@ -30,6 +30,7 @@
             android:layout_below="@+id/module"
             android:layout_centerHorizontal="true"
             android:background="@color/colorPrimary"
+            android:textColor="#FFF"
             android:text="Noter vos symptômes" />
     </RelativeLayout>
 
@@ -65,7 +66,7 @@
     <android.support.design.widget.NavigationView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        app:menu="@menu/navigation_menu"
+        app:menu="@menu/navigation_module"
         android:layout_gravity="start"
         android:id="@+id/nav_view"
         android:orientation="vertical"

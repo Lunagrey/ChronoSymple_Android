@@ -23,7 +23,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="211dp"
             android:text="Aucun module actif.\n"
-            android:textSize="30dp"
+            android:textSize="24dp"
             android:gravity="center_horizontal"/>
 
         <Button
@@ -34,7 +34,9 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="29dp"
             android:background="#62BE87"
-            android:text="Allez sur le Market Place" />
+            android:text="Allez sur le Market Place"
+            android:textColor="#FFF"
+            />
     </RelativeLayout>
 
     <android.support.design.widget.NavigationView

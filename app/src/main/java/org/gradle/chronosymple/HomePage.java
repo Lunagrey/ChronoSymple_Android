@@ -25,7 +25,6 @@ public class HomePage extends AppCompatActivity {
     Button  marketplace = null;
     Button  note = null;
     String  hide;
-    String  state;
     String  glycémie;
     String  glucide;
     String  insulineapresrepas;
@@ -52,6 +51,7 @@ public class HomePage extends AppCompatActivity {
             actionbar = getSupportActionBar();
             actionbar.setDisplayHomeAsUpEnabled(true);
             actionbar.setHomeAsUpIndicator(R.drawable.ic_menu_black_24dp);
+            actionbar.setTitle("Acceuil");
             mDrawerLayout = (DrawerLayout)findViewById(R.id.activity_main);
             t = new ActionBarDrawerToggle(this, mDrawerLayout,R.string.Open, R.string.Close);
             mDrawerLayout.addDrawerListener(t);
@@ -61,9 +61,9 @@ public class HomePage extends AppCompatActivity {
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                     int id = item.getItemId();
-                    if (id != R.id.diabete) {
+                    if (id == R.id.Add) {
                         mDrawerLayout.closeDrawers();
-                        goToHomePage();
+                        goToMarketPlacePage();
                     }
                     return true;
                 }
@@ -78,6 +78,7 @@ public class HomePage extends AppCompatActivity {
             actionbar = getSupportActionBar();
             actionbar.setDisplayHomeAsUpEnabled(true);
             actionbar.setHomeAsUpIndicator(R.drawable.ic_menu_black_24dp);
+            actionbar.setTitle("Diabète");
             mDrawerLayout = (DrawerLayout)findViewById(R.id.activity_main);
             t = new ActionBarDrawerToggle(this, mDrawerLayout,R.string.Open, R.string.Close);
             mDrawerLayout.addDrawerListener(t);
@@ -87,9 +88,12 @@ public class HomePage extends AppCompatActivity {
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                     int id = item.getItemId();
-                    if (id != R.id.diabete) {
+                    if (id == R.id.Add) {
                         mDrawerLayout.closeDrawers();
-                        goToHomePageModuleActivated();
+                        goToMarketPlacePage();
+                    }
+                    if (id == R.id.diabete) {
+                        mDrawerLayout.closeDrawers();
                     }
                     return true;
                 }
@@ -104,6 +108,7 @@ public class HomePage extends AppCompatActivity {
             actionbar = getSupportActionBar();
             actionbar.setDisplayHomeAsUpEnabled(true);
             actionbar.setHomeAsUpIndicator(R.drawable.ic_menu_black_24dp);
+            actionbar.setTitle("Diabète");
             mDrawerLayout = (DrawerLayout)findViewById(R.id.activity_main);
             t = new ActionBarDrawerToggle(this, mDrawerLayout,R.string.Open, R.string.Close);
             mDrawerLayout.addDrawerListener(t);
@@ -113,9 +118,12 @@ public class HomePage extends AppCompatActivity {
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                     int id = item.getItemId();
-                    if (id != R.id.diabete) {
+                    if (id == R.id.diabete) {
                         mDrawerLayout.closeDrawers();
-                        goToHomePageModuleActivated();
+                    }
+                    if (id == R.id.Add) {
+                        mDrawerLayout.closeDrawers();
+                        goToMarketPlacePage();
                     }
                     return true;
                 }
@@ -130,6 +138,7 @@ public class HomePage extends AppCompatActivity {
             actionbar = getSupportActionBar();
             actionbar.setDisplayHomeAsUpEnabled(true);
             actionbar.setHomeAsUpIndicator(R.drawable.ic_menu_black_24dp);
+            actionbar.setTitle("Diabète");
             mDrawerLayout = (DrawerLayout)findViewById(R.id.activity_main);
             t = new ActionBarDrawerToggle(this, mDrawerLayout,R.string.Open, R.string.Close);
             mDrawerLayout.addDrawerListener(t);
@@ -139,9 +148,12 @@ public class HomePage extends AppCompatActivity {
                 @Override
                 public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                     int id = item.getItemId();
-                    if (id != R.id.diabete) {
+                    if (id == R.id.Add) {
                         mDrawerLayout.closeDrawers();
-                        goToHomePageModuleActivated();
+                        goToMarketPlacePage();
+                    }
+                    if (id == R.id.diabete) {
+                        mDrawerLayout.closeDrawers();
                     }
                     return true;
                 }
@@ -188,8 +200,11 @@ public class HomePage extends AppCompatActivity {
         public boolean onNavigationItemSelected(@NonNull MenuItem item) {
             Fragment fragment;
             switch (item.getItemId()) {
-                case R.id.navigation_add_note:
+                case R.id.navigation_home:
                     return true;
+                case R.id.navigation_add_note:
+                    goToNoteActivityPage();
+                    return false;
                 case R.id.navigation_calendar:
                    goToCalendarActivityPage();
                     return true;
@@ -209,9 +224,9 @@ public class HomePage extends AppCompatActivity {
         i.putExtra("hide", hide);
         i.putExtra("glycémie", glycémie);
         i.putExtra("glucide", glucide);
-        i.putExtra("inculineavantrepas", insulineavantrepas);
-        i.putExtra("inculineapresrepas", insulineapresrepas);
-        i.putExtra("inculineajeun", insulineajeun);
+        i.putExtra("insulineavantrepas", insulineavantrepas);
+        i.putExtra("insulineapresrepas", insulineapresrepas);
+        i.putExtra("insulineajeun", insulineajeun);
         startActivity(i);
     }
 
@@ -220,9 +235,9 @@ public class HomePage extends AppCompatActivity {
         i.putExtra("hide", hide);
         i.putExtra("glycémie", glycémie);
         i.putExtra("glucide", glucide);
-        i.putExtra("inculineavantrepas", insulineavantrepas);
-        i.putExtra("inculineapresrepas", insulineapresrepas);
-        i.putExtra("inculineajeun", insulineajeun);
+        i.putExtra("insulineavantrepas", insulineavantrepas);
+        i.putExtra("insulineapresrepas", insulineapresrepas);
+        i.putExtra("insulineajeun", insulineajeun);
         startActivity(i);
     }
 
@@ -231,9 +246,9 @@ public class HomePage extends AppCompatActivity {
         i.putExtra("hide", hide);
         i.putExtra("glycémie", glycémie);
         i.putExtra("glucide", glucide);
-        i.putExtra("inculineavantrepas", insulineavantrepas);
-        i.putExtra("inculineapresrepas", insulineapresrepas);
-        i.putExtra("inculineajeun", insulineajeun);
+        i.putExtra("insulineavantrepas", insulineavantrepas);
+        i.putExtra("insulineapresrepas", insulineapresrepas);
+        i.putExtra("insulineajeun", insulineajeun);
         startActivity(i);
     }
 
@@ -242,9 +257,9 @@ public class HomePage extends AppCompatActivity {
         i.putExtra("hide", hide);
         i.putExtra("glycémie", glycémie);
         i.putExtra("glucide", glucide);
-        i.putExtra("inculineavantrepas", insulineavantrepas);
-        i.putExtra("inculineapresrepas", insulineapresrepas);
-        i.putExtra("inculineajeun", insulineajeun);
+        i.putExtra("insulineavantrepas", insulineavantrepas);
+        i.putExtra("insulineapresrepas", insulineapresrepas);
+        i.putExtra("insulineajeun", insulineajeun);
         startActivity(i);
     }
 
@@ -253,9 +268,9 @@ public class HomePage extends AppCompatActivity {
         i.putExtra("hide", hide);
         i.putExtra("glycémie", glycémie);
         i.putExtra("glucide", glucide);
-        i.putExtra("inculineavantrepas", insulineavantrepas);
-        i.putExtra("inculineapresrepas", insulineapresrepas);
-        i.putExtra("inculineajeun", insulineajeun);
+        i.putExtra("insulineavantrepas", insulineavantrepas);
+        i.putExtra("insulineapresrepas", insulineapresrepas);
+        i.putExtra("insulineajeun", insulineajeun);
         startActivity(i);
     }
 
@@ -264,9 +279,9 @@ public class HomePage extends AppCompatActivity {
         i.putExtra("hide", hide);
         i.putExtra("glycémie", glycémie);
         i.putExtra("glucide", glucide);
-        i.putExtra("inculineavantrepas", insulineavantrepas);
-        i.putExtra("inculineapresrepas", insulineapresrepas);
-        i.putExtra("inculineajeun", insulineajeun);
+        i.putExtra("insulineavantrepas", insulineavantrepas);
+        i.putExtra("insulineapresrepas", insulineapresrepas);
+        i.putExtra("insulineajeun", insulineajeun);
         startActivity(i);
     }
     public void goToHomePageModuleActivated() {
@@ -274,9 +289,9 @@ public class HomePage extends AppCompatActivity {
         i.putExtra("hide", hide);
         i.putExtra("glycémie", glycémie);
         i.putExtra("glucide", glucide);
-        i.putExtra("inculineavantrepas", insulineavantrepas);
-        i.putExtra("inculineapresrepas", insulineapresrepas);
-        i.putExtra("inculineajeun", insulineajeun);
+        i.putExtra("insulineavantrepas", insulineavantrepas);
+        i.putExtra("insulineapresrepas", insulineapresrepas);
+        i.putExtra("insulineajeun", insulineajeun);
         i.putExtra("hide", "true");
         startActivity(i);
     }

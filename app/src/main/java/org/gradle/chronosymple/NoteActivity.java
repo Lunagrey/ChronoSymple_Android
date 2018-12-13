@@ -57,9 +57,9 @@ public class NoteActivity extends AppCompatActivity {
             i.putExtra("hide", hide);
         i.putExtra("glycémie", editglycémie.getText().toString());
         i.putExtra("glucide", editglucide.getText().toString());
-        i.putExtra("inculineavantrepas", editinsulineavantrepas.getText().toString());
-        i.putExtra("inculineapresrepas", editinsulineapèsrepas.getText().toString());
-        i.putExtra("inculineajeun", editinsulineajeun.getText().toString());
+        i.putExtra("insulineavantrepas", editinsulineavantrepas.getText().toString());
+        i.putExtra("insulineapresrepas", editinsulineapèsrepas.getText().toString());
+        i.putExtra("insulineajeun", editinsulineajeun.getText().toString());
         startActivity(i);
     }
 

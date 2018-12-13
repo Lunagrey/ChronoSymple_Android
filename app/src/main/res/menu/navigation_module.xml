@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+        <item android:id="@+id/diabete"
+            android:icon="@drawable/ic_fiber_manual_record_black_24dp"
+            android:title="Diabète">
+        </item>
+
+
     <item android:id="@+id/Add"
         android:icon="@drawable/ic_add_circle_outline_black_24dp"
         android:title="Add a module">
     </item>
-
 </menu>

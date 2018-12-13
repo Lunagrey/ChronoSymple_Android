@@ -5,70 +5,109 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <RelativeLayout
-
         android:id="@+id/relativeLayout1"
         android:layout_width="match_parent"
-        android:layout_height="553dp"
-        android:layout_marginTop="48dp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent">
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/Layoutglycémie">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Glycémie :  "
+                android:textSize="25sp"
+                android:textStyle="bold" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/glycémie"
+                android:textSize="25sp"
+                />
+        </LinearLayout>
 
-        <TextView
-            android:id="@+id/glicémie"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
-            android:text="Glicémie"
+            android:orientation="horizontal"
+            android:id="@+id/Layoutglucide"
             android:textSize="25sp"
-            android:textStyle="bold" />
-
+            android:layout_marginTop="10dp"
+            android:layout_below="@+id/Layoutglycémie">
         <TextView
-            android:id="@+id/glucide"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/glicémie"
-            android:layout_marginTop="20dp"
-            android:text="Glucides"
+            android:text="Glucides : "
             android:textSize="25sp"
             android:textStyle="bold" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="25sp"
+                android:id="@+id/glucide"/>
+        </LinearLayout>
 
-        <TextView
-            android:id="@+id/insuavrepas"
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/glucide"
-            android:layout_marginTop="20dp"
-            android:text="Insuline avant repas"
+            android:orientation="horizontal"
+            android:id="@+id/Layoutinsulineavantrepas"
+            android:layout_marginTop="10dp"
             android:textSize="25sp"
-            android:textStyle="bold" />
-
+            android:layout_below="@+id/Layoutglucide">
         <TextView
-            android:id="@+id/insuline1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/insuavrepas"
-            android:layout_marginTop="20dp"
-            android:text="Insuline"
+            android:text="Insu avant repas : "
             android:textSize="25sp"
             android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/insuline2"
+            <TextView
+                android:id="@+id/insuavrepas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="25sp" />
+        </LinearLayout>
+        <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignLeft="@+id/insuline1"
-            android:layout_alignStart="@+id/insuline1"
-            android:layout_below="@+id/insuline1"
-            android:layout_marginTop="20dp"
-            android:text="Insuline"
+            android:orientation="horizontal"
+            android:id="@+id/Layoutinsulineapresrepas"
+            android:layout_marginTop="10dp"
             android:textSize="25sp"
-            android:textStyle="bold" />
+            android:layout_below="@+id/Layoutinsulineavantrepas">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Insu après repas : "
+                android:textSize="25sp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/insuaprepas"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="25sp" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:textSize="25sp"
+            android:layout_below="@+id/Layoutinsulineapresrepas">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Insu à jeun : "
+                android:textSize="25sp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/insuajeun"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="25sp" />
+        </LinearLayout>
+
 
     </RelativeLayout>
 </android.support.constraint.ConstraintLayout>

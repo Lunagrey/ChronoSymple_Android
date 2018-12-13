@@ -19,7 +19,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="100dp"
             android:text="Vous pouvez maintenant voir ses nots dans votre calendrier.\n"
-            android:textSize="30dp"
+            android:textSize="24dp"
             android:gravity="center_horizontal"/>
 
         <Button
@@ -65,7 +65,7 @@
     <android.support.design.widget.NavigationView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        app:menu="@menu/navigation_menu"
+        app:menu="@menu/navigation_module"
         android:layout_gravity="start"
         android:id="@+id/nav_view"
         android:orientation="vertical"
