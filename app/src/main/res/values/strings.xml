@@ -6,4 +6,6 @@
     <string name="title_profile">Profile</string>
     <string name="Open">Close</string>
     <string name="Close">Open</string>
+    <string name="title_activity_medi_list">mediList</string>
+    <string name="title_activity_modu_list">moduList</string>
 </resources>
